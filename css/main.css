@@ -1,0 +1,590 @@
+/* Start Variables */
+:root {
+    --first-color: #372972;
+    --second-color: #2a2155;
+    --third-color: #711a94;
+    --fourth-color: #5400ea;
+    --fifth-color: #251652;
+    --sixth-color: #4d216f;
+    --card-color: #3b2c7c;
+    --section-margin: 60px;
+}
+/* End Variables */
+
+/* Start global rules */
+body {
+    font-family: 'Comme', sans-serif;
+    color: #FFF;
+    background-image: linear-gradient(to right, var(--first-color), var(--second-color));
+}
+* {
+    box-sizing: border-box;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+.container {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+@media (max-width: 800px) {
+    .container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+@media (max-width: 650px) {
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+/* End global rules */
+
+/* Start Component */
+.heading {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+@media (max-width: 600px) {
+    .heading {
+        font-size: 25px;
+    }
+}
+/* End Component */
+
+/* Start header */
+header {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+header .h1-container {
+    flex-grow: 1;
+}
+header .h1-container h1 {
+    margin: 0;
+    font-size: 25px;
+}
+header span {
+    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    position: relative;
+}
+header span::after {
+    content: "";
+    position: absolute;
+    left: 98%;
+    top: 79%;
+    width: 2px;
+    height: 6px;
+    background-color: #FFF;
+    transform: rotate(-45deg);
+}
+header span:hover + form {
+    display: flex;
+}
+header .bars {
+    margin: 0 10px;
+    font-size: 20px;
+    display: none;
+}
+header form {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    background-image: linear-gradient(to left, var(--first-color), var(--second-color));
+    display: none;
+}
+header form label i {
+    padding: 15px;
+}
+header form input {
+    flex-grow: 1;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #FFF;
+}
+header ul {
+    display: flex;
+}
+@media (max-width: 920px) {
+    header ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        justify-content: center;
+        border-radius: 5px;
+        background-image: linear-gradient(to left, var(--first-color), var(--second-color));
+    }
+    header .bars:hover + ul {
+        display: flex;
+    }
+    header ul li {
+        padding: 15px 0;
+        text-align: center;
+        font-size: 13px;
+    }
+    header .bars {
+        display: initial;
+    }
+}
+header ul li a {
+    margin: 0 10px;
+}
+header button {
+    margin-left: 10px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    background-image: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    box-shadow: 0px 0px 5px 0px #000 inset;
+}
+/* Small Fonts for Small Screens */
+@media (max-width: 500px) {
+    header .h1-container h1 {
+        max-width: 110px;
+        font-size: 20px;
+    }
+    header button {
+        font-size: 13px;
+    }
+}
+/* End header */
+
+/* Start landing */
+.landing {
+    margin-top: var(--section-margin);
+    margin-bottom: calc(var(--section-margin) / 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 1050px){
+    .landing {
+        flex-direction: column;
+    }
+}
+.landing .info {
+    width: 450px;
+}
+.landing .info h1 {
+    margin: 0;
+    font-size: 40px;
+}
+.landing .info p {
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+.landing .info div {
+    margin-right: 20px;
+    padding: 10px 0;
+    width: 70px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(0 0 0 / 0.35);
+}
+.landing .info div i {
+    margin-bottom: 10px;
+}
+.landing .info div p {
+    margin: 0;
+}
+.landing .image {
+    width: 50%;
+}
+.landing .image img {
+    width: 100%;
+}
+@media (max-width: 1050px){
+    .landing .info {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .landing .image {
+        width: 100%;
+    }
+}
+@media (max-width: 500px){
+    .landing .info h1 {
+        font-size: 25px;
+    }
+    .landing .info p {
+        font-size: 10px;
+    }
+}
+/* End landing */
+
+/* Start form */
+.rent-form {
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    background-image: linear-gradient(to left, var(--first-color), var(--second-color));
+}
+.rent-form div {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.rent-form div label {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.rent-form div input {
+    padding: 10px 15px;
+    width: 100%;
+    outline: none;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: transparent;
+}
+@media (max-width: 900px){
+    .rent-form {
+        flex-direction: column;
+    }
+    .rent-form div {
+        margin: 10px 0;
+    }
+    .rent-form div label,
+    .rent-form div input {
+        font-size: 10px;
+    }
+}
+/* End form */
+
+/* Start Services */
+.services {
+    margin-top: var(--section-margin);
+    margin-bottom: var(--section-margin);
+    display: flex;
+    justify-content: space-between;
+}
+.services .left{
+    width: 500px;
+}
+.services .left h1 {
+    margin: 0;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.services .left p {
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+.services .left img {
+    width: 100%;
+}
+.services .right {
+    width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+.services .right .box {
+    margin: 40px 10px;
+    padding-top: 55px;
+    width: 260px;
+    height: fit-content;
+    text-align: center;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 #000;
+    position: relative;
+}
+.services .right .box .circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, var(--third-color), var(--fourth-color));
+}
+.services .right .box .circle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+.services .right .box h3 {
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.services .right .box p {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+@media (max-width: 1200px) {
+    .services {
+        flex-direction: column;
+    }
+    .services .left,
+    .services .right {
+        width: 100%;
+    }
+}
+/* End Services */
+
+/* Start our-vehicles */
+.our-vehicles {
+    margin-top: var(--section-margin);
+    margin-bottom: var(--section-margin);
+}
+.our-vehicles .content {
+    background-image: linear-gradient(to right, var(--fifth-color), var(--sixth-color));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 1140px) {
+    .our-vehicles .content {
+        flex-direction: column;
+    }
+}
+.our-vehicles .content .left {
+    padding: 40px 50px;
+}
+.our-vehicles .content .right {
+
+}
+.our-vehicles .content .right img {
+    width: 100%;
+}
+.our-vehicles .content .left h1 {
+    margin-top: 0;
+}
+.our-vehicles .content .left .stars {
+
+}
+.our-vehicles .content .left .stars i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: gold;
+}
+.our-vehicles .content .left p {
+    font-size: 20px;
+}
+@media (max-width: 500px) {
+    .our-vehicles .content .left h1 {
+        font-size: 25px;
+    }
+    .our-vehicles .content .left p {
+        font-size: 15px;
+    }
+}
+.our-vehicles .content .left p:nth-of-type(3),
+.our-vehicles .content .left p:nth-of-type(4) {
+    text-transform: uppercase;
+}
+.our-vehicles .content .left .icon {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.our-vehicles .content .left .icon i {
+    font-size: 25px;
+}
+.our-vehicles .content .left .icon i:first-child {
+    margin-right: 5px
+}
+.our-vehicles .content .left .icon i:not(last-child) {
+    margin: 0 5px;
+}
+.our-vehicles .content .left button {
+    padding: 18px 60px;
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    background-image: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    box-shadow: 0px 0px 5px 0px #000 inset;
+}
+/* End our-vehicles */
+
+/* Start Rent */
+.rent {
+    margin-top: var(--section-margin);
+    margin-bottom: var(--section-margin);
+}
+.rent .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    grid-gap: 50px;
+}
+.rent .content .card {
+    padding: 20px;
+    background-color: var(--card-color);
+    border-radius: 10px;
+}
+.rent .content .card h2 {
+    font-weight: 500;
+    margin: 0;
+}
+.rent .content .card h2:nth-child(1),
+.rent .content .card h2:nth-child(5) {
+    text-align: center;
+}
+.rent .content .card .image {
+    margin-top: 10px;
+    width: 100;
+    min-height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.rent .content .card .image img {
+    width: 100%;
+}
+.rent .content .card .icon {
+    margin: 10px 0 20px;
+}
+.rent .content .card .icon i {
+    margin-left: 10px;
+}
+.rent .content .card button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 0 15px;
+    font-weight: 600;
+    color: #FFF;
+    background-image: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    box-shadow: 0px 0px 2px 0px #000 inset;
+}
+/* End Rent */
+
+/* Start our-brands */
+.our-brands {
+    margin-top: var(--section-margin);
+    margin-bottom: var(--section-margin);
+}
+.our-brands ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.our-brands li {
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    background-image: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    box-shadow: 0 0  5px 0 #000 inset;
+}
+.our-brands li img {
+    height: 80%;
+    margin-right: 10px;
+}
+@media (max-width: 900px) {
+    .our-brands li {
+        margin: 5px;
+        width: 145px;
+    }
+    .our-brands li img {
+        margin-right: 5px;
+        height: 65%;
+    }
+}
+/* End our-brands */
+
+/* Start footer */
+footer {
+    padding: 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: linear-gradient(to left, var(--first-color), var(--fifth-color));
+}
+@media (max-width: 1100px){
+    footer {
+        justify-content: flex-start;
+    }
+}
+@media (max-width: 800px) {
+    footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+@media (max-width: 650px) {
+    footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+footer div {
+    margin: 20px 10px;
+}
+footer div:first-child {
+    width: 350px;
+}
+footer div h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+footer div ul li {
+    padding: 2px 0;
+}
+footer div:not(:first-child) ul li a i {
+    margin-right: 10px;
+}
+footer .info-1 p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+footer .info-1 ul {
+    margin-top: 10px;
+    display: flex;
+}
+footer .info-1 ul li {
+    padding: 0 10px;
+}
+footer .info-1 ul li a i {
+    font-size: 30px;
+}
+@media (max-width: 500px){
+    footer .info-1 ul li a i{
+        font-size: 20px;
+    }
+    footer div h2 {
+        font-size: 25px;
+    }
+    footer div p {
+        font-size: 11px !important;
+    }
+    footer div ul li {
+        font-size: 12px;
+    }
+}
+/* End footer */
