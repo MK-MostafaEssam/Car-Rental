@@ -12,6 +12,9 @@
 /* End Variables */
 
 /* Start global rules */
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Comme', sans-serif;
     color: #FFF;
